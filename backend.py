@@ -128,6 +128,9 @@ def plot_year_stats(data):
     for ax in axes:
         ax.set_xlabel('')
         ax.set_ylabel('Count')
+        for p in ax.patches:
+            ax.annotate(str(round(p.get_height(), 2)),
+                        (p.get_x(), p.get_height() * 1.005))
 
     output = io.BytesIO()
     plt.savefig(output)
@@ -154,6 +157,9 @@ def plot_month_stats(data):
         ax.set_ylabel('Count')
         labels = [item.get_text() for item in ax.get_xticklabels()]
         ax.set_xticklabels([month_map[month] for month in labels])
+        for p in ax.patches:
+            ax.annotate(str(round(p.get_height(), 2)),
+                        (p.get_x(), p.get_height() * 1.005))
 
     output = io.BytesIO()
     plt.savefig(output)
@@ -179,6 +185,9 @@ def plot_weekday_stats(data):
         ax.set_ylabel('Count')
         labels = [item.get_text() for item in ax.get_xticklabels()]
         ax.set_xticklabels([weekday_map[weekday] for weekday in labels])
+        for p in ax.patches:
+            ax.annotate(str(round(p.get_height(), 2)),
+                        (p.get_x(), p.get_height() * 1.005))
 
     output = io.BytesIO()
     plt.savefig(output)
@@ -199,6 +208,9 @@ def plot_hour_stats(data):
     for ax in axes:
         ax.set_xlabel('')
         ax.set_ylabel('Count')
+        for p in ax.patches:
+            ax.annotate(str(round(p.get_height(), 2)),
+                        (p.get_x(), p.get_height() * 1.005))
 
     output = io.BytesIO()
     plt.savefig(output)
