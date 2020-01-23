@@ -38,7 +38,7 @@ def get_query_timestamp(date):
     """
     Converts the passed date to a UNIX timestamp
     """
-    stripped_date = datetime.strptime(date, "%d/%m/%Y").timestamp()
+    stripped_date = datetime.strptime(date, "%Y-%m-%d").timestamp()
     return stripped_date
 
 
