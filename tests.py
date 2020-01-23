@@ -32,7 +32,7 @@ class TestWallApp(unittest.TestCase):
         consisiting of the whole wall content
         *Must be adjusted accordingly, since new posts can be posted
         """
-        timestamp = backend.get_query_timestamp('1/1/2000')
+        timestamp = backend.get_query_timestamp('2000-1-1')
         milonov_posts = backend.load_posts(3011920, timestamp)
         self.assertEqual(len(milonov_posts), 2323)
 
@@ -42,7 +42,7 @@ class TestWallApp(unittest.TestCase):
         *Must be adjusted accordingly, since new posts can be posted
         """
         name = 'milonov'
-        date = '22/1/2020'
+        date = '2020-1-22'
         query_id = backend.get_query_id(name)
         query_date = backend.get_query_timestamp(date)
         raw_milonov_posts = backend.load_posts(query_id, query_date)
