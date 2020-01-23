@@ -1,6 +1,5 @@
 import backend
 import pandas as pd
-from datetime import datetime
 from flask import Flask, render_template, request, Response
 
 app = Flask(__name__)
