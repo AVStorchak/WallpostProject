@@ -1,5 +1,6 @@
 import backend
 import pandas as pd
+from datetime import datetime
 from flask import Flask, render_template, request, Response
 
 app = Flask(__name__)
@@ -51,30 +52,42 @@ def get_csv():
 
 @app.route("/plotyear")
 def plot_year():
-    df = entry.df
-    plot = backend.plot_year_stats(df)
-    return Response(plot, mimetype='image/png')
+    try:
+        df = entry.df
+        plot = backend.plot_year_stats(df)
+        return Response(plot, mimetype='image/png')
+    except:
+        return render_template("no_stats_error.html")
 
 
 @app.route("/plotmonth")
 def plot_month():
-    df = entry.df
-    plot = backend.plot_month_stats(df)
-    return Response(plot, mimetype='image/png')
+    try:
+        df = entry.df
+        plot = backend.plot_month_stats(df)
+        return Response(plot, mimetype='image/png')
+    except:
+        return render_template("no_stats_error.html")
 
 
 @app.route("/plotweekday")
 def plot_weekday():
-    df = entry.df
-    plot = backend.plot_weekday_stats(df)
-    return Response(plot, mimetype='image/png')
+    try:
+        df = entry.df
+        plot = backend.plot_weekday_stats(df)
+        return Response(plot, mimetype='image/png')
+    except:
+        return render_template("no_stats_error.html")
 
 
 @app.route("/plothour")
 def plot_hour():
-    df = entry.df
-    plot = backend.plot_hour_stats(df)
-    return Response(plot, mimetype='image/png')
+    try:
+        df = entry.df
+        plot = backend.plot_hour_stats(df)
+        return Response(plot, mimetype='image/png')
+    except:
+        return render_template("no_stats_error.html")
 
 
 if __name__ == "__main__":
