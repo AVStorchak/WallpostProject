@@ -15,10 +15,11 @@
 <div align="center">
   <h1> Welcome! Here you can get data on VK wallposts </h1>
   <form method="POST"> 
-    <label> VK user: </label>
-    <br><input type="text" name="user" value = {{user_text | safe}}>  <br><br>
-    <label> Statistics collection start date in DD/MM/YYYY format: </label>
-    <br><input type="text" name="date" value = {{user_text | safe}}>  <br><br>
+    <label> VK user: </label><br>
+    <input type="text" name="user" value = {{user_text | safe}}><br><br>
+	<label> Statistics collection start date: </label><br>
+    <input type="date" name="calendar"><br><br>
+	<label> CSV file options: </label><br>
 	<input type="checkbox" name=fields value="id" id="check1" checked><label for="check1">Post ID</label>
 	<input type="checkbox" name=fields value="text" id="check2" checked><label for="check2">Post Text</label>
 	<input type="checkbox" name=fields value="comments" id="check7" checked><label for="check7">Comments</label>
@@ -31,4 +32,3 @@
 
 <img src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_VK-512.png">
 </div>
-
