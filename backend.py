@@ -1,7 +1,6 @@
 import csv
 import io
 import matplotlib.pyplot as plt
-import pandas as pd
 import vk
 from datetime import datetime
 
@@ -13,6 +12,12 @@ vkapi = vk.API(session, v='5.103')
 plot_list = ['posts', 'comments', 'likes', 'reposts']
 plt.style.use('seaborn')
 title = ', '.join(plot_list[1:])
+params = {'axes.labelsize': 'x-large',
+          'axes.titlesize':'x-large',
+          'xtick.labelsize':'large',
+          'ytick.labelsize':'x-large',
+          'figure.titlesize':'xx-large'}
+plt.rcParams.update(params)
 
 
 def get_query_id(name):
