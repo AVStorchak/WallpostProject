@@ -9,6 +9,8 @@ app = Flask(__name__)
 class DataContainer():
     pass
 
+entry = DataContainer()
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -91,5 +93,4 @@ def plot_hour():
 
 
 if __name__ == "__main__":
-    entry = DataContainer()
     app.run()
