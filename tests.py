@@ -57,7 +57,7 @@ class TestWallApp(unittest.TestCase):
         and the number of likes and comments can change
         """
         name = 'vkgames'
-        date = '15/12/2019'
+        date = '2019-12-15'
         query_id = backend.get_query_id(name)
         query_date = backend.get_query_timestamp(date)
         all_posts = backend.load_posts(query_id, query_date)
