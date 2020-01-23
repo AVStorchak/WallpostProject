@@ -18,7 +18,7 @@ def home():
         return render_template("index.html")
     if request.method == "POST":
         user = request.form.get('user')
-        date = request.form.get('date')
+        date = request.form.get('calendar')
         entry.requested_fields = request.form.getlist('fields')
 
         if user == '':
